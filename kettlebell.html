@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kettlebell 20’</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="theme-color" content="#e8590c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#faf7f2;--fg:#1f2328;--mut:#6b7280;--card:#fff;--line:#e5e1d8;--acc:#e8590c;--acc2:#fff3e8;--ok:#2f9e44;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#16181c;--fg:#eceff3;--mut:#9aa3af;--card:#20242a;--line:#323842;--acc:#ff8a3d;--acc2:#2c2118;--ok:#51cf66}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#16181c;--fg:#eceff3;--mut:#9aa3af;--card:#20242a;--line:#323842;--acc:#ff8a3d;--acc2:#2c2118;--ok:#51cf66}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:560px;margin:0 auto;padding:16px}
+h1{font-size:24px;margin:4px 0}h2{font-size:15px;margin:22px 0 8px;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.sub{color:var(--mut);margin:0 0 14px}
+.tabs{display:flex;gap:8px}.tab{flex:1;min-width:0;padding:10px 3px;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--fg);font:inherit;font-weight:600;cursor:pointer}
+.tab small{display:block;font-weight:400;color:var(--mut);font-size:11px;line-height:1.2;margin-top:2px}.tab.on{border-color:var(--acc);background:var(--acc2)}
+.card{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 12px 8px 8px;margin-bottom:10px}
+.card svg{width:112px;height:112px;flex:none;background:var(--acc2);border-radius:12px}
+.card b{display:block}.card span{color:var(--mut);font-size:14px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 0}.pill{background:var(--acc2);color:var(--acc);border-radius:99px;padding:3px 10px;font-size:13px;font-weight:600}
+.btn{display:block;width:100%;padding:16px;border:0;border-radius:16px;background:var(--acc);color:#fff;font:inherit;font-size:18px;font-weight:700;cursor:pointer;margin-top:10px}
+.btn.alt{background:var(--card);color:var(--fg);border:2px solid var(--line);font-size:15px;font-weight:600}
+.note{font-size:13px;color:var(--mut);margin-top:16px}
+.fig .sh{fill:var(--line)}.fig path{fill:none;stroke:var(--fg);stroke-linecap:round;stroke-linejoin:round}.fig .tor{stroke-width:17}.fig .th{stroke-width:13}.fig .sn{stroke-width:9}.fig .ft{stroke-width:7}.fig .ua{stroke-width:8}.fig .fa{stroke-width:7}.fig .xl{stroke-width:10;opacity:.4}.fig .xa{stroke-width:7;opacity:.4}.fig .g{stroke:var(--mut);stroke-width:2;stroke-dasharray:4 5;opacity:.6}.fig .h{fill:var(--fg)}.fig .kb circle{fill:var(--acc);stroke:var(--bg);stroke-width:2}.fig .kb .kh{stroke:var(--acc);stroke-width:4}[data-hl~=tor] .tor,[data-hl~=lg] .th,[data-hl~=lg] .sn,[data-hl~=ar] .ua,[data-hl~=ar] .fa{stroke:var(--acc)}.tg{display:block;font-style:normal;font-size:13px;color:var(--acc);font-weight:600;margin:1px 0 3px}.mu{text-align:center;color:var(--acc);font-weight:600;font-size:14px;margin:-2px 0 6px}
+#run{position:fixed;inset:0;background:var(--bg);display:none;flex-direction:column;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));overflow:auto;z-index:5}
+#run.on{display:flex}.top{display:flex;justify-content:space-between;color:var(--mut);font-size:14px}
+.bar{height:6px;background:var(--line);border-radius:9px;margin:8px 0}.bar i{display:block;height:100%;width:0;background:var(--acc);border-radius:9px}
+.phase{text-align:center;font-weight:700;color:var(--acc);letter-spacing:.05em;text-transform:uppercase;font-size:14px;margin-top:6px}
+#rf{width:min(62vw,260px);height:min(62vw,260px);margin:6px auto;display:block;background:var(--acc2);border-radius:24px}
+.nm{text-align:center;font-size:22px;font-weight:700;margin:4px 0}.cue{text-align:center;color:var(--mut);margin:0 8px 8px;min-height:46px}
+.ring{position:relative;width:120px;height:120px;margin:4px auto}.ring svg{transform:rotate(-90deg)}
+.ring div{position:absolute;inset:0;display:grid;place-items:center;font-size:38px;font-weight:800;font-variant-numeric:tabular-nums}
+.nx{text-align:center;color:var(--mut);margin:6px 0 10px}.row{display:flex;gap:8px}.row .btn{margin-top:0}
+</style></head><body>
+<main id="home"></main>
+<section id="run"></section>
+<script>
+const pz=(s,h,k,f,e,w)=>[...s,...h,...k,...f,...e,...w];
+const ST=pz([100,42],[100,98],[100,140],[100,180],[100,70],[100,98]);
+const EX={
+halo:{n:'Кръгове около главата',c:'Изправи гърдите, ребрата прибрани. Водѝ звънеца близо до главата; сменяй посоката.',a:pz([100,42],[100,98],[100,140],[100,180],[118,52],[115,28]),b:pz([100,42],[100,98],[100,140],[100,180],[84,52],[85,28])},
+eight:{n:'Осмици между краката',c:'Леко свити колене, гръб прав. Предавай звънеца от ръка в ръка около краката.',a:pz([130,70],[90,98],[108,140],[100,180],[125,98],[118,125]),b:pz([130,70],[90,98],[108,140],[100,180],[112,98],[86,125])},
+squat:{n:'Гоблет клек',c:'Звънеца до гърдите, лакти надолу. Седни назад между петите, гръдта нагоре.',a:pz([100,42],[100,98],[100,140],[100,180],[108,68],[112,56]),b:pz([112,70],[82,128],[128,128],[100,180],[118,98],[118,86])},
+dead:{n:'Мъртва тяга',c:'Гърбът е прав. Избутай таза назад, звънецът се плъзга близо до краката.',a:pz([100,42],[100,98],[100,140],[100,180],[100,76],[100,104]),b:pz([135,92],[75,115],[108,145],[100,180],[135,120],[135,150])},
+lunge:{n:'Обратна напад',c:'Крачка назад, коляното почти докосва пода. Торсът прав, звънецът пред гърдите.',a:pz([100,42],[100,98],[100,140],[100,180],[108,68],[112,56]),b:pz([100,68],[100,122],[130,142],[118,180],[108,92],[112,80])},
+row:{n:'Гребане с една ръка',c:'Наведи се с прав гръб. Дърпай лакътя към ханша, стягай лопатките. После другата ръка.',a:pz([135,70],[85,100],[100,140],[100,180],[135,100],[135,132]),b:pz([135,70],[85,100],[100,140],[100,180],[112,86],[122,100])},
+swing:{n:'Люлка (swing)',c:'Тласък от таза, не от ръцете. Звънецът до височина на гърдите, не по-високо.',a:pz([135,80],[85,108],[108,142],[100,180],[125,100],[112,126]),b:pz([102,45],[98,100],[100,140],[100,180],[130,58],[152,54])},
+press:{n:'Преса с една ръка',c:'Стегнати корем и глутеуси. Избутай звънеца нагоре, без да извиваш кръста. Смени ръката.',a:pz([100,42],[100,98],[100,140],[100,180],[112,72],[108,52]),b:pz([100,42],[100,98],[100,140],[100,180],[103,38],[102,10])},
+march:{n:'Гоблет марш',c:'Звънеца при гърдите. Вдигай колене последователно, стой висок и стабилен.',a:pz([100,42],[100,98],[100,140],[100,180],[108,68],[112,56]),b:pz([100,42],[100,98],[128,108],[126,148],[108,68],[112,56])},
+twist:{n:'Руско завъртане',c:'Седни, облегни се леко назад, гръб прав. Завърти торса и звънеца встрани.',a:pz([112,108],[86,160],[128,140],[152,168],[124,112],[134,116]),b:pz([112,108],[86,160],[128,140],[152,168],[110,124],[96,130])},
+fold:{n:'Наклон напред',c:'Бавно се наведи с леко свити колене. Дишай дълбоко, отпусни врата.',a:ST,b:pz([140,112],[82,98],[92,140],[95,180],[140,140],[140,166])},
+chest:{n:'Отваряне на гърдите',c:'Отвори ръцете встрани и назад, лопатките се доближават. Гърдите напред. Дишай.',a:pz([100,42],[100,98],[100,140],[100,180],[98,72],[98,100]),b:pz([104,42],[100,98],[100,140],[100,180],[84,76],[68,92])}};
+const MU={halo:'Рамене, горна част на гърба',eight:'Задни бедра, кор, хват',squat:'Квадрицепси, глутеуси, кор',dead:'Глутеуси, задни бедра, гръб',lunge:'Бедра, глутеуси, баланс',row:'Широк гръб, рамене, бицепс',swing:'Глутеуси, гръб, кардио',press:'Рамене, трицепс, кор',march:'Кор, бедра, баланс',twist:'Корем, коси мускули',fold:'Задни бедра, гръб',chest:'Гърди, предни рамене'};
+const HL={halo:'ar',eight:'tor lg',squat:'lg',dead:'tor lg',lunge:'lg',row:'ar tor',swing:'tor lg',press:'ar',march:'lg tor',twist:'tor',fold:'lg',chest:'ar'};
+const FAR={lunge:{a:[100,140,100,180],b:[88,155,66,178]},march:{a:[100,140,100,180],b:[100,140,100,180]}};Object.assign(MU,{latlunge:'Бедра, глутеуси, вътрешни бедра',sumo:'Вътрешни бедра, глутеуси, гръб',curl:'Бицепс, предмишници',highpull:'Рамене, трапец, глутеуси',bridge:'Глутеуси, задни бедра, кор'});
+Object.assign(HL,{latlunge:'lg',sumo:'lg tor',curl:'ar',highpull:'ar tor',bridge:'lg tor'});
+Object.assign(EX,{latlunge:{n:'Страничен напад',c:'Широка крачка встрани, седни върху крачещия крак, другият остава прав. Звънецът е пред гърдите.'},sumo:{n:'Сумо тяга',c:'Широка стойка, пръсти навън. Хвани звънеца с две ръце, седни назад и се изправи, стягайки глутеусите.'},curl:{n:'Сгъване за бицепс',c:'Лакътят до тялото. Вдигни звънеца към рамото без люлеене и бавно го спусни. После другата ръка.'},highpull:{n:'Високо дърпане',c:'Тръгни от таза: дръпни звънеца с лактите нагоре до височина на гърдите. Не вдигай рамене.'},bridge:{n:'Глутеус мост',c:'Легни по гръб, стъпала на пода, звънеца на таза. Повдигни таза в права линия рамене–колене, задръж 1 с.',a:pz([42,174],[98,174],[134,144],[140,176],[72,172],[100,160]),b:pz([42,170],[98,132],[140,130],[142,176],[70,150],[98,126])}});
+const fz=o=>{const d={s:[100,50],h:[100,102],kl:[90,142],fl:[88,180],kr:[110,142],fr:[112,180],el:[80,76],wl:[78,102],er:[120,76],wr:[122,102],...o};if(!o.kb)d.kb=d.wl;return['s','h','kl','fl','kr','fr','el','wl','er','wr','kb'].flatMap(k=>d[k])};
+const FV={halo:{a:fz({}),o:['c',100,30,32,16]},eight:{a:fz({s:[100,82],h:[100,108],kl:[84,146],fl:[72,180],kr:[116,146],fr:[128,180]}),o:['8',100,132,32,14]},
+press:{a:fz({el:[72,80],wl:[78,60]}),b:fz({el:[81,30],wl:[80,8]})},
+twist:{a:fz({s:[100,112],h:[100,160],kl:[90,146],fl:[88,176],kr:[110,146],fr:[112,176]}),o:['a',100,134,34,8]},
+chest:{a:fz({el:[78,74],wl:[84,100],er:[122,74],wr:[116,100]}),b:fz({el:[58,60],wl:[42,46],er:[142,60],wr:[158,46]})},
+latlunge:{a:fz({el:[84,80],wl:[94,76],er:[116,80],wr:[106,76],kb:[100,78]}),b:fz({s:[78,72],h:[78,122],kl:[58,152],fl:[48,180],kr:[104,152],fr:[128,180],el:[66,98],wl:[74,92],er:[90,98],wr:[84,92],kb:[79,94]})},
+sumo:{a:fz({kl:[84,146],fl:[72,180],kr:[116,146],fr:[128,180],el:[86,80],wl:[96,112],er:[114,80],wr:[104,112],kb:[100,122]}),b:fz({s:[100,92],h:[100,124],kl:[80,152],fl:[70,180],kr:[120,152],fr:[130,180],el:[88,114],wl:[96,138],er:[112,114],wr:[104,138],kb:[100,148]})},
+curl:{a:fz({}),b:fz({el:[80,78],wl:[88,56]})},
+highpull:{a:fz({el:[84,82],wl:[96,108],er:[116,82],wr:[104,108],kb:[100,112]}),b:fz({el:[64,56],wl:[92,48],er:[136,56],wr:[108,48],kb:[100,50]})}};
+const NOKB=['fold','chest'];
+const SES={A:{t:'Сесия A',d:'Крака, таз и гръб',w:['halo','eight'],m:['squat','dead','lunge','row'],c:['fold','chest']},
+B:{t:'Сесия B',d:'Люлка, рамене и кор',w:['halo','eight'],m:['swing','press','march','twist'],c:['fold','chest']},
+C:{t:'Сесия C',d:'Страни и баланс',w:['halo','eight'],m:['latlunge','sumo','curl','bridge'],c:['fold','chest']},
+D:{t:'Сесия D',d:'Рамене и торс',w:['halo','eight'],m:['highpull','squat','press','twist'],c:['fold','chest']}};
+const fig=(id)=>`<svg class="fig" viewBox="0 0 200 200" data-ex="${id}" data-hl="${HL[id]}"><ellipse class="sh" cx="100" cy="184" rx="66" ry="5"/><path class="g"/><path class="g g2"/><path class="xl"/><path class="xa"/><path class="tor"/><path class="th"/><path class="sn"/><path class="ft"/><path class="ua"/><path class="fa"/><circle class="h" r="13"/><g class="kb"><path class="kh" d="M-6 -7C-6 -21 6 -21 6 -7"/><circle r="10"/></g></svg>`;
+const $=s=>document.querySelector(s);let cur='A',test=false,run=null,tm=null;
+function home(){const s=SES[cur];const card=id=>`<div class="card">${fig(id)}<div><b>${EX[id].n}</b><i class="tg">🎯 ${MU[id]}</i><span>${EX[id].c}</span></div></div>`;
+$('#home').innerHTML=`<h1>Kettlebell 20’</h1><p class="sub">Един звънец · начинаещи 40+ · 20 минути</p><p class="note" style="margin:-6px 0 12px">Оранжевото = работещите мускули. Пунктирът = начало и край на движението. Бледата част е другият крак и ръка.</p>
+<div class="tabs">${Object.keys(SES).map(k=>`<button class="tab ${k==cur?'on':''}" onclick="cur='${k}';home()">${SES[k].t}<small>${SES[k].d}</small></button>`).join('')}</div>
+<div class="meta"><span class="pill">2’ загрявка</span><span class="pill">16’ основна част</span><span class="pill">2’ разтягане</span></div>
+<h2>Загрявка · 2 × 60 с</h2>${s.w.map(card).join('')}
+<h2>Основна част · 4 кръга × 40 с работа / 20 с почивка</h2>${s.m.map(card).join('')}
+<h2>Разтягане · 2 × 60 с</h2>${s.c.map(card).join('')}
+<button class="btn" onclick="start(false)">▶ Старт на 20-минутната сесия</button>
+<button class="btn alt" onclick="start(true)">Тестов преглед (бързо, ~5 с на упражнение)</button>
+<p class="note">Започни с лек звънец (напр. 6–12 кг). Качеството на движението е по-важно от тежестта. Спри при болка и се консултирай с лекар, ако имаш здравословни проблеми.</p>`}
+function build(k){const s=SES[k],o=[],d=x=>test?Math.max(3,Math.round(x/10)):x;
+s.w.forEach(e=>o.push({e,p:'Загрявка',t:d(60)}));
+for(let r=1;r<=4;r++)s.m.forEach((e,i)=>{o.push({e,p:`Работа · кръг ${r}/4`,t:d(40),work:1});const n=s.m[i+1]||(r<4?s.m[0]:s.c[0]);o.push({e:n,p:'Почивка',t:d(20),rest:1})});
+s.c.forEach(e=>o.push({e,p:'Разтягане',t:d(60)}));return o}
+function beep(f){try{const a=beep.a||(beep.a=new (window.AudioContext||window.webkitAudioContext)()),o=a.createOscillator(),g=a.createGain();o.frequency.value=f;g.gain.value=.15;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+.15)}catch(e){}}
+function start(t){test=t;run={s:build(cur),i:0,paused:false,left:0};run.tot=run.s.reduce((a,x)=>a+x.t,0);run.done=0;$('#run').classList.add('on');load();clearInterval(tm);tm=setInterval(tick,100)}
+function load(){const x=run.s[run.i];run.left=x.t;const nx=run.s[run.i+1];
+$('#run').innerHTML=`<div class="top"><span>${SES[cur].t}</span><span id="tl"></span></div><div class="bar"><i id="pb"></i></div>
+<div class="phase" id="ph"></div>${fig(x.e).replace('class="fig"','class="fig" id="rf"')}
+<div class="nm" id="nm"></div><div class="cue" id="cu"></div><div class="mu" id="mu"></div>
+<div class="ring"><svg width="120" height="120"><circle cx="60" cy="60" r="54" fill="none" stroke="var(--line)" stroke-width="9"/><circle id="rg" cx="60" cy="60" r="54" fill="none" stroke="var(--acc)" stroke-width="9" stroke-linecap="round" stroke-dasharray="339.3"/></svg><div id="cd"></div></div>
+<div class="nx" id="nx"></div>
+<div class="row"><button class="btn alt" id="pp" onclick="run.paused=!run.paused;this.textContent=run.paused?'▶ Продължи':'⏸ Пауза'">⏸ Пауза</button><button class="btn alt" onclick="next()">Пропусни ⏭</button><button class="btn alt" onclick="stop()">✕ Спри</button></div>`;
+$('#ph').textContent=x.p;$('#mu').textContent='🎯 '+MU[x.e];$('#nm').textContent=EX[x.e].n;$('#cu').textContent=x.rest?'Поеми въздух. Погледни как се прави следващото упражнение.':EX[x.e].c;
+$('#nx').textContent=nx&&!x.rest?'Следва: '+(nx.rest?'почивка':EX[nx.e].n):(x.rest?'Следва: '+EX[x.e].n:'');
+if(x.rest)$('#nm').textContent='Почивка → '+EX[x.e].n;$('#run').style.background=x.rest?'var(--acc2)':'var(--bg)';beep(x.rest?520:880);paint()}
+function paint(){const x=run.s[run.i];$('#cd').textContent=Math.ceil(run.left);$('#rg').style.strokeDashoffset=339.3*(1-run.left/x.t);
+const el=run.done+(x.t-run.left);$('#pb').style.width=(100*el/run.tot)+'%';const r=Math.ceil(run.tot-el);$('#tl').textContent=`остават ${Math.floor(r/60)}:${String(r%60).padStart(2,'0')}`}
+function tick(){if(!run||run.paused)return;run.left-=.1;if(run.left<=0)return next();paint()}
+function next(){run.done+=run.s[run.i].t;run.i++;if(run.i>=run.s.length){clearInterval(tm);beep(660);$('#run').innerHTML=`<div class="phase" style="margin-top:20vh">Готово!</div><div class="nm">Браво, сесията е завършена 🎉</div><p class="cue">Пий вода и си почини. Следващия път опитай другата сесия.</p><button class="btn" onclick="stop()">Към упражненията</button>`;return}load()}
+function stop(){clearInterval(tm);run=null;$('#run').classList.remove('on')}
+function front(s,id,ms,t,m){const v=FV[id],q=c=>s.querySelector('.'+c),d=(c,x)=>q(c).setAttribute('d',x),p=m(v.a,v.b||v.a),th=ms/1000*2*Math.PI/2.6;
+if(v.o){const[k,cx,cy,rx,ry]=v.o,x=k=='c'?cx+rx*Math.cos(th):cx+rx*Math.sin(th),y=k=='c'?cy+ry*Math.sin(th):k=='8'?cy+ry*Math.sin(2*th):cy+ry*Math.sin(th)**2;
+p[20]=x;p[21]=y;p[14]=x-6;p[15]=y+1;p[18]=x+6;p[19]=y+1;p[12]=(p[0]-18+x)/2-8;p[13]=(p[1]+y)/2+10;p[16]=(p[0]+18+x)/2+8;p[17]=(p[1]+y)/2+10}
+const P=i=>p[i]+' '+p[i+1],sx=p[0],sy=p[1],hx=p[2],hy=p[3],sk=z=>`M${z[0]} ${z[1]}L${z[2]} ${z[3]}M${z[2]} ${z[3]}L${z[4]} ${z[5]}L${z[6]} ${z[7]}M${z[2]} ${z[3]}L${z[8]} ${z[9]}L${z[10]} ${z[11]}M${z[0]} ${z[1]}L${z[12]} ${z[13]}L${z[14]} ${z[15]}M${z[0]} ${z[1]}L${z[16]} ${z[17]}L${z[18]} ${z[19]}`;
+d('g',v.o?'':sk(v.a));d('g2',v.o||!v.b?'':sk(v.b));d('xl','');d('xa','');
+d('tor',`M${sx-18} ${sy}L${sx+18} ${sy}M${sx} ${sy}L${hx} ${hy}M${hx-10} ${hy}L${hx+10} ${hy}`);
+d('th',`M${hx-10} ${hy}L${P(4)}M${hx+10} ${hy}L${P(8)}`);d('sn',`M${P(4)}L${P(6)}M${P(8)}L${P(10)}`);d('ft',`M${P(6)}l-9 0M${P(10)}l9 0`);
+d('ua',`M${sx-18} ${sy}L${P(12)}M${sx+18} ${sy}L${P(16)}`);d('fa',`M${P(12)}L${P(14)}M${P(16)}L${P(18)}`);
+const dx=sx-hx,dy=sy-hy,l=Math.hypot(dx,dy)||1,h=q('h'),k=q('kb');h.setAttribute('cx',sx+dx/l*22);h.setAttribute('cy',sy+dy/l*22);k.setAttribute('transform',`translate(${p[20]} ${p[21]})`);k.style.display=NOKB.includes(id)?'none':''}
+function frame(ms){const t=(1-Math.cos(ms/1000*2*Math.PI/2.6))/2,L=(a,b,c,d)=>`M${a} ${b}L${c} ${d}`,m=(a,b)=>a.map((v,i)=>v+(b[i]-v)*t),sk=z=>`M${z[0]} ${z[1]}L${z[2]} ${z[3]}L${z[4]} ${z[5]}L${z[6]} ${z[7]}M${z[0]} ${z[1]}L${z[8]} ${z[9]}L${z[10]} ${z[11]}`;
+document.querySelectorAll('.fig').forEach(s=>{const id=s.dataset.ex;if(FV[id])return front(s,id,ms,t,m);const e=EX[id],f=FAR[id],q=c=>s.querySelector('.'+c),d=(c,v)=>q(c).setAttribute('d',v),p=m(e.a,e.b),g=f?m(f.a,f.b):[p[4],p[5],p[6],p[7]];
+d('g',sk(e.a));d('g2',sk(e.b));d('tor',L(p[2],p[3],p[0],p[1]));d('th',L(p[2],p[3],p[4],p[5]));d('sn',L(p[4],p[5],p[6],p[7]));d('ft',L(p[6],p[7],p[6]+15,p[7]));d('ua',L(p[0],p[1],p[8],p[9]));d('fa',L(p[8],p[9],p[10],p[11]));
+d('xl',`M${p[2]-3} ${p[3]}L${g[0]-5} ${g[1]}L${g[2]-5} ${g[3]}l15 0`);d('xa',`M${p[0]-2} ${p[1]}L${p[8]-6} ${p[9]}L${p[10]-6} ${p[11]}`);
+const dx=p[0]-p[2],dy=p[1]-p[3],l=Math.hypot(dx,dy)||1,h=q('h'),k=q('kb');
+h.setAttribute('cx',p[0]+dx/l*22);h.setAttribute('cy',p[1]+dy/l*22);k.setAttribute('transform',`translate(${p[10]} ${p[11]})`);k.style.display=NOKB.includes(id)?'none':'';});
+requestAnimationFrame(frame)}
+home();requestAnimationFrame(frame);
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+</script></body></html>

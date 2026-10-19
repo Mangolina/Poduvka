@@ -1,0 +1,20 @@
+{
+  "name": "Kettlebell 20 минути",
+  "short_name": "Kettlebell 20",
+  "description": "Сесии с един kettlebell за начинаещи 40+",
+  "lang": "bg",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf7f2",
+  "theme_color": "#e8590c",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
